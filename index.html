@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="center">
+        <p>calc( )</p>
+        <form action="" name="forms">
+            <input placeholder="Enter values.." type="text" id="display" name="display" disabled>
+            
+            <div class="buttons">
+                <input class="btn" type="button" value="7" name="" id="seven">
+                <input class="btn" type="button" value="8" name="" id="eight">
+                <input class="btn" type="button" value="9" name="" id="nine">
+                <input class="btn" type="button" value="/" name="" id="divide"><br>
+
+                <input class="btn" type="button" value="4" name="" id="four">
+                <input class="btn" type="button" value="5" name="" id="five">
+                <input class="btn" type="button" value="6" name="" id="six">
+                <input class="btn" type="button" value="*" name="" id="multi"><br>
+
+                <input class="btn" type="button" value="1" name="" id="one">
+                <input class="btn" type="button" value="2" name="" id="two">
+                <input class="btn" type="button" value="3" name="" id="three">
+                <input class="btn" type="button" value="-" name="" id="subs"><br>
+
+                
+                <input class="btn" type="button" value="." name="" id="dot">
+                <input class="btn" type="button" value="0" name="" id="zero">
+                <input class="btn" type="button" value="+" name="" id="add">
+                <input class=" clear" type="button" value="c" name="" id="clear"><br>
+                <input class=" equal" type="button" value="=" name="" id="equal">
+
+
+                
+
+            </div>
+        </form>
+
+    </div>
+
+    <script>
+        
+(function(){
+
+let display = document.querySelector("#display");
+
+let buttons = document.querySelectorAll(".btn");
+let clear = document.querySelector(".clear");
+let equal = document.querySelector(".equal")
+
+
+
+
+
+
+buttons.forEach(function(button){
+    button.addEventListener("click",function(e){
+        let value = e.target.value;
+        display.value += value
+    })
+});
+
+    equal.addEventListener("click",function(e){
+        if(display.value==''){
+           
+            display.value = "Enter value"
+        }
+        else{
+            const answer = eval(display.value);
+            display.value = answer
+        }
+    });
+    clear.addEventListener("click",function(e){
+        display.value ="";
+    })
+    
+
+
+
+
+
+})();
+
+
+    </script>
+    
+</body>
+</html>
